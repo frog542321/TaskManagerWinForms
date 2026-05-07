@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Проект_Коршиков01
 {
     public partial class Form1 : Form
     {
-        Task[] tasks = new Task[0];
+        List<Task> task1 = new List<Task>();
         public Form1()
         {
             InitializeComponent();
@@ -20,58 +21,42 @@ namespace Проект_Коршиков01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Task tasks = new Task(textBox1.Text, Convert.ToDouble(textBox1.Text));
-            listBox1.Items.Add(tasks.Print());
-            textBox1.Text.Clear();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            string task = textBox1.Text.ToString();
+            listBox1.Items.Add(task);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double notclickbutton = 0;
-            listBox1.Items.Clear();
-            foreach (var n in tasks)
+            string Task = listBox1.Text.ToString();
+            listBox1.Items.Remove(Task);
+            if (listBox1.SelectedIndex == -1)
             {
-                listBox1.Items.Add(n.Print());
-                notclickbutton += n.notclick();
+                MessageBox.Show("Не выбрана задача для выполнения действия");
+                return;
             }
-            label3.Text = Convert.ToString($"{notclickbutton}");
-            listBox1.Items.Add(tasks.Print());
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null) 
+            {
+                textBox2.Text = listBox1.SelectedItem.ToString();
+                textBox2.Visible = true;
+            }
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не выбрана задача для выполнения действия");
+                return;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
         public class Task
         {
-            string name;
-            string description;
-            int data= 1;
-            string priorety;
-            string status;
-            public string Name
-            {
-                get { return name; }
-            }
-
-            public string description { get { return description; } }
-            public int data { get { return data; } set { this.data = value; } }
-
-            public Task(string name, string description)
-            {
-                this.name = name;
-                this.description = description;
-            }
-            public string Print() => $"Name - {this.Name}, price - {this.description}, kol = {this.data}";
-            public double Total()
-            {
-                return this.description * this.data;
-            }
+            public string Title { get; set; }
         }
     }
 }
