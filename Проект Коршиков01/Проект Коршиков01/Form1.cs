@@ -47,5 +47,31 @@ namespace Проект_Коршиков01
         {
 
         }
+        public class Task
+        {
+            string name;
+            string description;
+            int data= 1;
+            string priorety;
+            string status;
+            public string Name
+            {
+                get { return name; }
+            }
+
+            public string description { get { return description; } }
+            public int data { get { return data; } set { this.data = value; } }
+
+            public Task(string name, string description)
+            {
+                this.name = name;
+                this.description = description;
+            }
+            public string Print() => $"Name - {this.Name}, price - {this.description}, kol = {this.data}";
+            public double Total()
+            {
+                return this.description * this.data;
+            }
+        }
     }
 }
