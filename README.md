@@ -1,7 +1,8 @@
 # TaskManager
 
 ## Скриншот программы
-<img width="1209" height="320" alt="image" src="https://github.com/user-attachments/assets/b3d59dfd-13d6-4cd5-8fa6-fafd2e27d81d" />
+<img width="1210" height="320" alt="image" src="https://github.com/user-attachments/assets/1fbe7192-542e-41ae-9b73-c735a38c0aa5" />
+
 
 Главное окно приложения для управления задачами.
 
