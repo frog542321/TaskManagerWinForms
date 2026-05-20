@@ -51,12 +51,6 @@ namespace Проект_Коршиков01
             // DataGridView
             dgvTasks.ColumnCount = 5;
 
-            dgvTasks.Columns[0].Name = "Название";
-            dgvTasks.Columns[1].Name = "Описание";
-            dgvTasks.Columns[2].Name = "Дата";
-            dgvTasks.Columns[3].Name = "Приоритет";
-            dgvTasks.Columns[4].Name = "Готовность";
-
             dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTasks.MultiSelect = false;
             dgvTasks.AllowUserToAddRows = false;
@@ -65,8 +59,6 @@ namespace Проект_Коршиков01
             dgvTasks.AllowUserToAddRows = false;
             dgvTasks.AllowUserToDeleteRows = false;
             dgvTasks.AllowUserToResizeRows = false;
-
-            dgvTasks.Height = 350;
 
             // DrawItem
             cmbPriority.DrawMode = DrawMode.OwnerDrawFixed;

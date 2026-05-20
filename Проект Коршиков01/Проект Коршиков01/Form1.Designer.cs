@@ -267,7 +267,7 @@
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(150, 38);
             this.btnSort.TabIndex = 19;
-            this.btnSort.Text = "Сортировка";
+            this.btnSort.Text = "Примененить фильтры";
             this.btnSort.UseVisualStyleBackColor = true;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
